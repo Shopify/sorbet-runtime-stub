@@ -1,6 +1,16 @@
-source "https://rubygems.org"
+# frozen_string_literal: true
 
-# Specify your gem's dependencies in sorbet-runtime-stub.gemspec
+source("https://rubygems.org")
+
+PACKAGE_CLOUD = "https://packages.shopify.io/shopify/gems"
+source(PACKAGE_CLOUD)
+
 gemspec
 
-gem "rake", "~> 12.0"
+group(:deployment) do
+  gem("package_cloud", "~> 0.2.33")
+end
+
+group(:deployment, :development) do
+  gem("rake", "~> 12.3")
+end
