@@ -1,0 +1,13 @@
+name: sorbet-runtime-stub
+
+type: ruby
+
+up:
+  - ruby: 2.6.5
+  - bundler
+
+commands:
+  console:   "bin/console"
+
+open:
+  travis: "https://travis-ci.org/Shopify/tapioca"
