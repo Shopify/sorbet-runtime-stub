@@ -2,7 +2,7 @@
 
 Gem::Specification.new do |spec|
   spec.name          = "sorbet-runtime-stub"
-  spec.version       = "0.1.0"
+  spec.version       = "0.1.1"
   spec.authors       = ["Shopify"]
   spec.email         = ["ruby@shopify.com"]
 
