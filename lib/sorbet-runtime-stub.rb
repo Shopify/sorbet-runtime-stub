@@ -84,6 +84,18 @@ module T
     def self.[](type); end
   end
 
+  module Generic
+    include Helpers
+
+    def type_parameters(*params); end
+    def type_member(variance=:invariant, fixed: nil, lower: nil, upper: BasicObject); end
+    def type_template(variance=:invariant, fixed: nil, lower: nil, upper: BasicObject); end
+
+    def [](*types)
+      self
+    end
+  end
+
   module Hash
     def self.[](keys, values); end
   end
