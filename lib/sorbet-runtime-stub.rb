@@ -72,8 +72,7 @@ module T
     def self.[](type); end
   end
 
-  module Boolean
-  end
+  Boolean = Object.new.freeze
 
   module Configuration
     def self.call_validation_error_handler(signature, opts); end
