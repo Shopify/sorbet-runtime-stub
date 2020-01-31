@@ -13,7 +13,6 @@ module T
     def type_parameter(name); end
     def untyped; end
 
-
     def assert_type!(value, _type, _checked: true)
       value
     end
@@ -40,6 +39,30 @@ module T
 
     def unsafe(value)
       value
+    end
+  end
+
+  module Sig
+    def sig(&blk); end
+  end
+
+  module Helpers
+    def abstract!;  end
+    def interface!; end
+    def final!; end
+    def sealed!; end
+    def mixes_in_class_methods(mod); end
+  end
+
+  module Generic
+    include T::Helpers
+
+    def type_parameters(*params); end
+    def type_member(variance=:invariant, fixed: nil, lower: nil, upper: BasicObject); end
+    def type_template(variance=:invariant, fixed: nil, lower: nil, upper: BasicObject); end
+
+    def [](*types)
+      self
     end
   end
 
@@ -84,28 +107,8 @@ module T
     def self.[](type); end
   end
 
-  module Generic
-    include Helpers
-
-    def type_parameters(*params); end
-    def type_member(variance=:invariant, fixed: nil, lower: nil, upper: BasicObject); end
-    def type_template(variance=:invariant, fixed: nil, lower: nil, upper: BasicObject); end
-
-    def [](*types)
-      self
-    end
-  end
-
   module Hash
     def self.[](keys, values); end
-  end
-
-  module Helpers
-    def abstract!;  end
-    def interface!; end
-    def final!; end
-    def sealed!; end
-    def mixes_in_class_methods(mod); end
   end
 
   class Proc
@@ -132,9 +135,5 @@ module T
 
   module Set
     def self.[](type); end
-    end
-
-  module Sig
-    def sig(&blk); end
   end
 end
