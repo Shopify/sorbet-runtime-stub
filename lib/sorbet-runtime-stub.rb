@@ -1,3 +1,5 @@
+# typed: ignore
+
 module T
   class << self
     def absurd(value); end
