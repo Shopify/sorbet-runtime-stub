@@ -1,6 +1,4 @@
 # https://services.shopify.io/services/sorbet-runtime-stub/production
 owners:
-  - Shopify/sorbet
+- Shopify/sorbet
 classification: library
-slack_channels:
-  - sorbet
