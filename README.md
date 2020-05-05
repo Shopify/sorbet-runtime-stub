@@ -4,6 +4,8 @@
 
 This gem provides stub definitions for all the `T` namespace that Sorbet type signatures need for runtime. This is appropriate for people who want nothing to do with `sorbet-runtime` when their code is being run.
 
+**Disclaimer**: This gem is being used in our applications but there are some still features missing and it may have some sharp edges.
+
 ## Installation
 
 Add this line to your application's Gemfile:
@@ -32,6 +34,10 @@ else
   require 'sorbet-runtime'
 end
 ```
+
+## Missing features
+
+Some feature from sorbet-runtime like `T::Enum` and `T::Struct` as still not supported.
 
 ## Development
 
