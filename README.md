@@ -1,7 +1,5 @@
 # sorbet-runtime-stub
 
-[![Build status](https://badge.buildkite.com/914aeee9240a3a0c0334c1050aed6bdb1ad1141fb18a038436.svg)](https://buildkite.com/shopify/sorbet-runtime-stub)
-
 This gem provides stub definitions for all the `T` namespace that Sorbet type signatures need for runtime. This is appropriate for people who want nothing to do with `sorbet-runtime` when their code is being run.
 
 **Disclaimer**: This gem is being used in our applications but there are some still features missing and it may have some sharp edges.

@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.homepage      = "https://github.com/Shopify/sorbet-runtime-stub"
   spec.license       = "MIT"
 
-  spec.metadata["allowed_push_host"] = "no"
+  spec.metadata["allowed_push_host"] = "https://rubygems.org"
 
   spec.bindir        = "exe"
   spec.executables   = []

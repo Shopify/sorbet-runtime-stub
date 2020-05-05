@@ -7,7 +7,7 @@ up:
   - bundler
 
 commands:
-  console:   "bin/console"
+  console: "bin/console"
 
 open:
-  travis: "https://travis-ci.org/Shopify/tapioca"
+  travis: "https://travis-ci.org/Shopify/sorbet-runtime-stub"
