@@ -74,6 +74,16 @@ module T
 
   Boolean = Object.new.freeze
 
+  module Props
+    module ClassMethods
+      def prop(_name, _cls,_ rules=nil)
+      end
+
+      def const(_name, _cls_or_args, _args=nil)
+      end
+    end
+  end
+
   module Configuration
     def self.call_validation_error_handler(signature, opts); end
     def self.call_validation_error_handler=(value); end
