@@ -1,5 +1,11 @@
 # typed: ignore
 
+begin
+  gem "sorbet-runtime"
+  return
+rescue Gem::LoadError
+end
+
 module T
   class << self
     def absurd(value); end
@@ -45,7 +51,7 @@ module T
   end
 
   module Sig
-    def sig(&blk); end
+    def sig(arg0=nil, &blk); end
   end
 
   module Helpers
