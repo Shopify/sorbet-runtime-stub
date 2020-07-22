@@ -22,9 +22,11 @@ Or install it yourself as:
 
 ## Usage
 
-Your code should decide to switch between requiring `sorbet-runtime` or `sorbet-runtime-stub`.
+The most critical thing when loading `sorbet-runtime-stub` is to never overwrite methods defined by `sorbet-runtime`, since this would cause silent suppression of runtime type checking.
 
-For example, if you don't want to load `sorbet-runtime` in a production environment in a Rails app, you can use:
+Thus, this gem will never load stub definitions if `sorbet-runtime` is present as a loadable gem in the application context. This means that on projects that do not use Bundler, this gem will not install stub definitions, if `sorbet-runtime` is installed as a gem (but it will also not load `sorbet-runtime`). On projects that use Bundler, this gem will not install stub definitions, if `sorbet-runtime` exists in the `Gemfile` for the currently running group.
+
+Thus, if you don't want to load `sorbet-runtime` in a production environment in a Rails app, you need to use:
 ```ruby
 if ENV['RAILS_ENV'] == 'production'
   require 'sorbet-runtime-stub'
@@ -32,6 +34,7 @@ else
   require 'sorbet-runtime'
 end
 ```
+and add `sorbet-runtime` to your `Gemfile` only for `development` and `test` groups.
 
 ## Missing features
 
