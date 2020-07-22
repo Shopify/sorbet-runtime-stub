@@ -51,7 +51,7 @@ module T
   end
 
   module Sig
-    def sig(&blk); end
+    def sig(arg0=nil, &blk); end
   end
 
   module Helpers
