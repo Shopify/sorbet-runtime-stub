@@ -36,6 +36,12 @@ end
 ```
 and add `sorbet-runtime` to your `Gemfile` only for `development` and `test` groups.
 
+If you are developing a gem that uses Sorbet in development but don't want the runtime typechecking to affect other code, you can conditionally load the runtime stubs at the top of your gem's code:
+```ruby
+require 'sorbet-runtime-stub' unless defined?(T)
+```
+You can then require the regular `sorbet-runtime` in your development-only files (e.g. test helpers, Rakefiles).
+
 ## Missing features
 
 Some feature from sorbet-runtime like `T::Enum` and `T::Struct` as still not supported.
