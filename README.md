@@ -1,3 +1,16 @@
+> **DEPRECATED: This gem should not be used anymore.**
+>
+> As of June 2021, `sorbet-runtime-stub` is no more maintained and no further versions will be published.
+>
+> We decided to stop supporting this gem for multiple reasons:
+> * It's not feature complete (missing T::Struct support and other Sorbet delicacies)
+> * It's hard to keep up-to-date with the real sorbet-runtime
+> * It provides a false sense of security for the users
+>
+> You should include sorbet-runtime and [disable the checks](https://sorbet.org/docs/runtime#changing-the-runtime-behavior) you don't want to apply in production env.
+>
+> If you're in the Shopify org, take a look at https://github.com/shopify/shopify-types.
+
 # sorbet-runtime-stub
 
 This gem provides stub definitions for all the `T` namespace that Sorbet type signatures need for runtime. This is appropriate for people who want nothing to do with `sorbet-runtime` when their code is being run.
